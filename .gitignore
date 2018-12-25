@@ -1,0 +1,4 @@
+.idea
+*_mock.go
+*.out
+*.out.tmp
