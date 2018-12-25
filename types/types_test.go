@@ -18,6 +18,8 @@ func heroWariorWithABow() Hero {
 }
 
 func TestHeroIsDead(t *testing.T) {
+	// t.Skip()
+	t.Parallel()
 	h := heroMage()
 	require.False(t, h.IsDead())
 
@@ -27,6 +29,7 @@ func TestHeroIsDead(t *testing.T) {
 
 // Basic test for a mage
 func TestHeroIsMageIsWarior(t *testing.T) {
+	t.Parallel()
 	m := heroMage()
 	require.True(t, m.IsMage())
 	require.False(t, m.IsWarior())
@@ -42,6 +45,7 @@ func TestHeroIsMageIsWarior(t *testing.T) {
 
 // Mage attack with -10 HP effect
 func TestMageAttack(t *testing.T) {
+	t.Parallel()
 	h := heroMage()
 	m := NewCanTakeDamageMock(t)
 	m.TakeDamageMock.ExpectOnce(20).Return(10)
@@ -52,6 +56,7 @@ func TestMageAttack(t *testing.T) {
 
 // Warior with a sword attack with -10 HP effect
 func TestWariorWithASwrodAttack(t *testing.T) {
+	t.Parallel()
 	h := heroWariorWithASword()
 	m := NewCanTakeDamageMock(t)
 	m.TakeDamageMock.ExpectOnce(8).Return(10)
@@ -61,6 +66,7 @@ func TestWariorWithASwrodAttack(t *testing.T) {
 
 // Warior with a bow attack with -10 HP effect
 func TestWariorWithABowAttack(t *testing.T) {
+	t.Parallel()
 	h := heroWariorWithABow()
 	m := NewCanTakeDamageMock(t)
 	m.TakeDamageMock.ExpectOnce(12).Return(10)
@@ -71,6 +77,7 @@ func TestWariorWithABowAttack(t *testing.T) {
 
 // Mage attack, no mana case
 func TestMageAttackNoMana(t *testing.T) {
+	t.Parallel()
 	h := heroMage()
 	m := NewCanTakeDamageMock(t)
 	// No mana case
@@ -84,6 +91,7 @@ func TestMageAttackNoMana(t *testing.T) {
 
 // Mage attack, no spells case
 func TestMageAttackNoSpells(t *testing.T) {
+	t.Parallel()
 	h := heroMage()
 	m := NewCanTakeDamageMock(t)
 	// No spells case
@@ -98,6 +106,7 @@ func TestMageAttackNoSpells(t *testing.T) {
 
 // Warrior with a bow attack, no arrows case
 func TestWariorWithABowAttackNoArrows(t *testing.T) {
+	t.Parallel()
 	h := heroWariorWithABow()
 	h.info.(*WariorInfo).ArrowsNumber = 0
 	m := NewCanTakeDamageMock(t)
