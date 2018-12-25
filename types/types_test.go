@@ -10,11 +10,11 @@ func heroMage() Hero {
 }
 
 func heroWariorWithASword() Hero {
-	return Hero {"Bob", 100, 25, &WariorInfo{ SWORD, 0 }}
+	return Hero{"Bob", 100, 25, &WariorInfo{SWORD, 0}}
 }
 
 func heroWariorWithABow() Hero {
-	return Hero {"Charlie", 100, 25, &WariorInfo{ BOW, 10 }}
+	return Hero{"Charlie", 100, 25, &WariorInfo{BOW, 10}}
 }
 
 func TestHeroIsDead(t *testing.T) {
@@ -96,7 +96,7 @@ func TestMageAttackNoSpells(t *testing.T) {
 	m := NewCanTakeDamageMock(t)
 	// No spells case
 	h.info = &MageInfo{
-		Mana: 100,
+		Mana:      100,
 		Spellbook: []Spell{},
 	}
 	h.Attack(m)

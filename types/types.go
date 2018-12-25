@@ -25,10 +25,10 @@ type MageInfo struct {
 }
 
 type Hero struct {
-	Name       string
-	HP         int
-	XP         int
-	info 		interface{}
+	Name string
+	HP   int
+	XP   int
+	info interface{}
 }
 
 //go:generate minimock -i github.com/afiskon/golang-unit-testing/types.CanTakeDamage -o . -s _mock.go
@@ -80,9 +80,9 @@ func (h *Hero) TakeDamage(num int) int {
 		h.HP = 0
 	}
 
-	if(h.IsMage()) {
+	if (h.IsMage()) {
 		// all mages are always protected
-		return num/10
+		return num / 10
 	} else {
 		return 0
 	}
