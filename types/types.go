@@ -61,7 +61,7 @@ func (h *Hero) IsMage() bool {
 	}
 }
 
-// Attacks a given Hero
+// Attacks a given enemy
 func (h *Hero) Attack(enemy CanTakeDamage) {
 	if h.IsMage() {
 		h.doMageAttack(enemy)
