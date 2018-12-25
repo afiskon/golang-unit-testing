@@ -104,7 +104,7 @@ func (h *Hero) doWarriorAttack(enemy CanTakeDamage) {
 }
 
 // TakeDamage takes the damage and returns the damage
-// an attacker should take because of applied spells
+// an attacker should take (e.g. because of applied spells)
 func (h *Hero) TakeDamage(num int) int {
 	h.HP -= num
 	if h.HP < 0 {
