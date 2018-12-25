@@ -14,7 +14,7 @@ const (
 	BOW   Weapon = iota
 )
 
-type WariorInfo struct {
+type WarriorInfo struct {
 	Weapon       Weapon
 	ArrowsNumber int
 }
@@ -41,10 +41,10 @@ func (h *Hero) IsDead() bool {
 	return h.HP == 0
 }
 
-// IsWarior return true if the hero is a warior.
-func (h *Hero) IsWarior() bool {
+// IsWarrior return true if the hero is a warrior.
+func (h *Hero) IsWarrior() bool {
 	switch h.info.(type) {
-	case *WariorInfo:
+	case *WarriorInfo:
 		return true
 	default:
 		return false
@@ -65,8 +65,8 @@ func (h *Hero) IsMage() bool {
 func (h *Hero) Attack(enemy CanTakeDamage) {
 	if h.IsMage() {
 		h.doMageAttack(enemy)
-	} else if h.IsWarior() {
-		h.doWariorAttack(enemy)
+	} else if h.IsWarrior() {
+		h.doWarriorAttack(enemy)
 	} else {
 		panic("Unknown class!")
 	}
@@ -104,8 +104,8 @@ func (h *Hero) doMageAttack(enemy CanTakeDamage) {
 	h.TakeDamage(enemy.TakeDamage(20))
 }
 
-func (h *Hero) doWariorAttack(enemy CanTakeDamage) {
-	info := h.info.(*WariorInfo)
+func (h *Hero) doWarriorAttack(enemy CanTakeDamage) {
+	info := h.info.(*WarriorInfo)
 	if info.Weapon == BOW {
 		if info.ArrowsNumber > 0 {
 			// attack using a bow
