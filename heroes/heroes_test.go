@@ -1,4 +1,4 @@
-package types
+package heroes
 
 import (
 	"github.com/stretchr/testify/require"

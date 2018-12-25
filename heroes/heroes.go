@@ -1,4 +1,4 @@
-package types
+package heroes
 
 type Spell int
 
@@ -31,7 +31,7 @@ type Hero struct {
 	info interface{}
 }
 
-//go:generate minimock -i github.com/afiskon/golang-unit-testing/types.CanTakeDamage -o . -s _mock.go
+//go:generate minimock -i github.com/afiskon/golang-unit-testing/heroes.CanTakeDamage -o . -s _mock.go
 type CanTakeDamage interface {
 	TakeDamage(num int) int
 }
