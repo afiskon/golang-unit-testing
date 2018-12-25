@@ -72,22 +72,6 @@ func (h *Hero) Attack(enemy CanTakeDamage) {
 	}
 }
 
-// TakeDamage takes the damage and returns the damage
-// an attacker should take because of applied spells
-func (h *Hero) TakeDamage(num int) int {
-	h.HP -= num
-	if h.HP < 0 {
-		h.HP = 0
-	}
-
-	if (h.IsMage()) {
-		// all mages are always protected
-		return num / 10
-	} else {
-		return 0
-	}
-}
-
 func (h *Hero) doMageAttack(enemy CanTakeDamage) {
 	info := h.info.(*MageInfo)
 	if info.Mana <= 5 {
@@ -116,5 +100,21 @@ func (h *Hero) doWarriorAttack(enemy CanTakeDamage) {
 		h.TakeDamage(enemy.TakeDamage(8))
 	} else {
 		panic("unknown weapon")
+	}
+}
+
+// TakeDamage takes the damage and returns the damage
+// an attacker should take because of applied spells
+func (h *Hero) TakeDamage(num int) int {
+	h.HP -= num
+	if h.HP < 0 {
+		h.HP = 0
+	}
+
+	if (h.IsMage()) {
+		// all mages are always protected
+		return num / 10
+	} else {
+		return 0
 	}
 }
