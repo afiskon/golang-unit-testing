@@ -1,6 +1,6 @@
 // +build integration
 
-package types
+package integration
 
 import "testing"
 
