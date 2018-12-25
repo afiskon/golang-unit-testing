@@ -36,12 +36,12 @@ type CanTakeDamage interface {
 	TakeDamage(num int) int
 }
 
-// IsDead return true if the hero has zero HP.
+// IsDead return true if hero has zero HP.
 func (h *Hero) IsDead() bool {
 	return h.HP == 0
 }
 
-// IsWarrior return true if the hero is a warrior.
+// IsWarrior return true if hero is a warrior.
 func (h *Hero) IsWarrior() bool {
 	switch h.info.(type) {
 	case *WarriorInfo:
@@ -51,7 +51,7 @@ func (h *Hero) IsWarrior() bool {
 	}
 }
 
-// IsMage returns true if the hero is a mage.
+// IsMage returns true if hero is a mage.
 func (h *Hero) IsMage() bool {
 	switch h.info.(type) {
 	case *MageInfo:
@@ -61,7 +61,7 @@ func (h *Hero) IsMage() bool {
 	}
 }
 
-// Attack a given enemy
+// Attack given enemy
 func (h *Hero) Attack(enemy CanTakeDamage) {
 	if h.IsMage() {
 		h.doMageAttack(enemy)
