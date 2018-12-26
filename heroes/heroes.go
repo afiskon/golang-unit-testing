@@ -68,7 +68,7 @@ func (h *Hero) Attack(enemy CanTakeDamage) {
 	} else if h.IsWarrior() {
 		h.doWarriorAttack(enemy)
 	} else {
-		panic("Unknown class!")
+		panic("unknown class")
 	}
 }
 
