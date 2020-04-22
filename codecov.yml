@@ -1,2 +1,4 @@
+comment:
+  layout: "diff, flags, files"
 ignore:
   - "**/*_mock.go"
