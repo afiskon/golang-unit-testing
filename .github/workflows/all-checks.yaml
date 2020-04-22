@@ -12,11 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: set up go ${{env.GO_VERSION}}
-      uses: actions/setup-go@v1
+      uses: actions/setup-go@v2 # v2 automatically adds GOBIN to PATH
       with:
         go-version: ${{env.GO_VERSION}}
-    - name: Add bin to path # required to execute build tools
-      run: echo "::add-path::${{env.GOPATH}}/bin"
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
       with:
