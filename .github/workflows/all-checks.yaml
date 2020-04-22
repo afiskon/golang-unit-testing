@@ -36,7 +36,9 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: coverage-out
+        path: ./coverage.out
     - name: Add coverage.html to artifacts
       uses: actions/upload-artifact@v1
       with:
         name: coverage-html
+        path: ./coverage.html
