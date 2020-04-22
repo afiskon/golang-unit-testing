@@ -90,26 +90,26 @@ func TestMageAttackNoMana(t *testing.T) {
 }
 
 // Mage attack, no spells case
-func TestMageAttackNoSpells(t *testing.T) {
-	t.Parallel()
-	h := heroMage()
-	m := NewCanTakeDamageMock(t)
-	// No spells case
-	h.info = &MageInfo{
-		Mana:      100,
-		Spellbook: []Spell{},
-	}
-	h.Attack(m)
-	require.Equal(t, h.HP, 100)
-	require.Equal(t, h.info.(*MageInfo).Mana, 100)
-}
+//func TestMageAttackNoSpells(t *testing.T) {
+//	t.Parallel()
+//	h := heroMage()
+//	m := NewCanTakeDamageMock(t)
+//	// No spells case
+//	h.info = &MageInfo{
+//		Mana:      100,
+//		Spellbook: []Spell{},
+//	}
+//	h.Attack(m)
+//	require.Equal(t, h.HP, 100)
+//	require.Equal(t, h.info.(*MageInfo).Mana, 100)
+//}
 
 // Warrior with a bow attack, no arrows case
-func TestWarriorWithABowAttackNoArrows(t *testing.T) {
-	t.Parallel()
-	h := heroWarriorWithABow()
-	h.info.(*WarriorInfo).ArrowsNumber = 0
-	m := NewCanTakeDamageMock(t)
-	h.Attack(m)
-	require.Equal(t, h.HP, 100)
-}
+//func TestWarriorWithABowAttackNoArrows(t *testing.T) {
+// t.Parallel()
+//	h := heroWarriorWithABow()
+//	h.info.(*WarriorInfo).ArrowsNumber = 0
+//	m := NewCanTakeDamageMock(t)
+//	h.Attack(m)
+//	require.Equal(t, h.HP, 100)
+//}
