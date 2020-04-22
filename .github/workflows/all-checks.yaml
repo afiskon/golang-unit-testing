@@ -15,7 +15,8 @@ jobs:
       uses: actions/setup-go@v1
       with:
         go-version: ${{env.GO_VERSION}}
-      id: go
+    - name: Add bin to path # required to execute build tools
+      run: echo "::add-path::${{env.GOPATH}}/bin"
     - name: Check out code into the Go module directory
       uses: actions/checkout@v1
       with:
