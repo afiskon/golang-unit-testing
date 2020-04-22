@@ -2,3 +2,4 @@
 *_mock.go
 *.out
 *.out.tmp
+coverage.html
