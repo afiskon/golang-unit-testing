@@ -1,4 +1,2 @@
-coverage:
-  range: "87..100"
 ignore:
   - "**/*_mock.go"
