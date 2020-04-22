@@ -20,6 +20,8 @@ jobs:
       uses: actions/checkout@v1
       with:
         fetch-depth: 1
+    - name: Install build tools
+      run: go install github.com/gojuno/minimock/v3/cmd/minimock
     - name: Run go generate
       run: go generate ./...
     - name: Run tests

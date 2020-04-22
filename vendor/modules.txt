@@ -3,11 +3,30 @@ github.com/davecgh/go-spew/spew
 # github.com/gojuno/minimock/v3 v3.0.6
 ## explicit
 github.com/gojuno/minimock/v3
+github.com/gojuno/minimock/v3/cmd/minimock
+# github.com/hexdigest/gowrap v1.1.7
+github.com/hexdigest/gowrap/generator
+github.com/hexdigest/gowrap/pkg
+github.com/hexdigest/gowrap/printer
+# github.com/pkg/errors v0.8.0
+github.com/pkg/errors
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
 # github.com/stretchr/testify v1.5.1
 ## explicit
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
+# golang.org/x/tools v0.0.0-20190614205625-5aca471b1d59
+golang.org/x/tools/go/ast/astutil
+golang.org/x/tools/go/gcexportdata
+golang.org/x/tools/go/internal/gcimporter
+golang.org/x/tools/go/internal/packagesdriver
+golang.org/x/tools/go/packages
+golang.org/x/tools/imports
+golang.org/x/tools/internal/fastwalk
+golang.org/x/tools/internal/gopathwalk
+golang.org/x/tools/internal/imports
+golang.org/x/tools/internal/module
+golang.org/x/tools/internal/semver
 # gopkg.in/yaml.v2 v2.2.2
 gopkg.in/yaml.v2

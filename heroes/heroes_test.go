@@ -1,6 +1,8 @@
 package heroes
 
 import (
+    // keep this import to make `go install github.com/gojuno/minimock/v3/cmd/minimock` work with vendoring
+     _ "github.com/gojuno/minimock/v3/cmd/minimock"
 	"github.com/stretchr/testify/require"
 	"testing"
 )
